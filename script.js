@@ -2,11 +2,11 @@ const body = document.body;
 const themeBtn = document.getElementById("themeBtn");
 const menuBtn = document.getElementById("menuBtn");
 const nav = document.getElementById("nav");
-const preloader = document.querySelector(".preloader-bar");
+const preloader = document.getElementById("preloader");
 
 /* PRELOADER */
 window.addEventListener("load", () => {
-  setTimeout(() => { if (preloader) preloader.classList.add("hide"); }, 1300);
+  setTimeout(() => preloader.classList.add("hide"), 1300);
 });
 
 /* THEME */
@@ -91,10 +91,8 @@ let ringY = mouseY;
 window.addEventListener("mousemove", e => {
   mouseX = e.clientX;
   mouseY = e.clientY;
-  if (dot) {
-    dot.style.left = `${mouseX}px`;
-    dot.style.top = `${mouseY}px`;
-  }
+  dot.style.left = `${mouseX}px`;
+  dot.style.top = `${mouseY}px`;
 });
 
 function animateCursor() {
@@ -108,16 +106,12 @@ animateCursor();
 
 document.querySelectorAll("a,button,.work-card,.skill-card,.service-card").forEach(el => {
   el.addEventListener("mouseenter", () => {
-    if (ring) {
-      ring.style.width = "58px";
-      ring.style.height = "58px";
-    }
+    ring.style.width = "58px";
+    ring.style.height = "58px";
   });
   el.addEventListener("mouseleave", () => {
-    if (ring) {
-      ring.style.width = "38px";
-      ring.style.height = "38px";
-    }
+    ring.style.width = "38px";
+    ring.style.height = "38px";
   });
 });
 

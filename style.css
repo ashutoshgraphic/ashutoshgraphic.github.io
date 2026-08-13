@@ -502,231 +502,80 @@ button,a{cursor:pointer}
   }
 }
 
-
-/* MOBILE LAYOUT FIX — preserves all original animations */
-@media (max-width: 800px) {
-  html, body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+/* V11 MOBILE HOME LAYOUT FIX
+   Keep artwork and typography in separate blocks so nothing overlaps on phones. */
+@media (max-width: 800px){
+  .hero{
+    min-height:auto;
+    padding-top:95px;
+    padding-bottom:48px;
   }
-  .hero-copy {
-    width: 100%;
-    max-width: 100%;
-    margin-top: -10px;
+  .hero-grid{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:8px;
   }
-  .hero-title {
-    max-width: 100%;
-    font-size: clamp(46px, 13vw, 82px);
-    letter-spacing: -4px;
+  .hero-art{
+    order:1;
+    width:100%;
+    height:340px;
+    margin:0;
+    overflow:hidden;
+    flex:none;
   }
-  .hero-title .line {
-    white-space: nowrap;
+  .hero-copy{
+    order:2;
+    width:100%;
+    margin:0 !important;
+    padding:0 8px;
   }
-  .hero-desc {
-    max-width: 100%;
+  .hero-kicker{margin-bottom:14px}
+  .hero-title{
+    font-size:clamp(50px,14vw,68px);
+    line-height:.9;
+    letter-spacing:-4px;
+    max-width:100%;
   }
-  .hero-art {
-    max-width: 100%;
-    overflow: visible;
+  .hero-desc{
+    max-width:100%;
+    font-size:14px;
+    line-height:1.75;
+    margin-top:22px;
   }
-}
-@media (max-width: 560px) {
-  .hero-title {
-    font-size: clamp(42px, 13.2vw, 70px);
-    letter-spacing: -3.5px;
+  .hero-actions{
+    margin-top:24px;
   }
-  .hero-art {
-    height: 330px;
+  .hero-meta{
+    margin-top:34px;
   }
+  .scroll-cue{
+    margin-top:24px;
+  }
+
+  /* Scale the hero artwork so it stays inside the phone width. */
+  .orbit-a{width:310px;height:310px}
+  .orbit-b{width:245px;height:245px}
+  .orbit-c{width:355px;height:355px}
+  .blob-one{width:210px;height:165px}
+  .blob-two{width:165px;height:145px}
+  .blob-three{width:125px;height:108px}
+  .hero-card{width:min(260px,74%);border-radius:22px}
+  .ring-word{width:165px;height:165px}
+  .card-core{font-size:42px}
+  .shape-star{font-size:30px}
+  .shape-cross{font-size:34px}
+  .shape-dot{font-size:16px}
 }
 
-/* EXTRA POLISHED MOTION — noticeable but lightweight */
-.hero-art .hero-card{
-  animation: cardFloat 7s ease-in-out infinite !important;
-  will-change: transform;
+@media (max-width:560px){
+  .hero-art{height:300px}
+  .hero-copy{padding:0 4px}
+  .hero-title{font-size:clamp(46px,13vw,60px);letter-spacing:-3px}
+  .hero-description{font-size:13px}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-actions .btn{width:100%}
+  .hero-meta{gap:20px}
+  .hero-meta strong{font-size:21px}
+  .hero-meta span{font-size:8px}
 }
-.hero-art .art-orbit{
-  animation-name: orbitBreathe !important;
-}
-.hero-art .blob-one{
-  animation-name: blobDrift1 !important;
-}
-.hero-art .blob-two{
-  animation-name: blobDrift2 !important;
-}
-.hero-art .blob-three{
-  animation-name: blobDrift3 !important;
-}
-.hero-copy .hero-kicker,
-.hero-copy .hero-title,
-.hero-copy .hero-desc,
-.hero-copy .hero-actions{
-  animation: heroEntrance .9s cubic-bezier(.2,.8,.2,1) both;
-}
-.hero-copy .hero-title{animation-delay:.12s}
-.hero-copy .hero-desc{animation-delay:.24s}
-.hero-copy .hero-actions{animation-delay:.36s}
-
-@keyframes cardFloat{
-  0%,100%{transform:translate(-50%,-50%) rotate(-7deg) translateY(0)}
-  50%{transform:translate(-50%,-50%) rotate(-4deg) translateY(-12px)}
-}
-@keyframes orbitBreathe{
-  0%,100%{transform:translate(-50%,-50%) rotate(0deg) scale(1);opacity:.72}
-  50%{transform:translate(-50%,-50%) rotate(7deg) scale(1.025);opacity:1}
-}
-@keyframes blobDrift1{
-  0%,100%{transform:translate(0,0) rotate(14deg) scale(1)}
-  50%{transform:translate(14px,-12px) rotate(20deg) scale(1.04)}
-}
-@keyframes blobDrift2{
-  0%,100%{transform:translate(0,0) rotate(-24deg) scale(1)}
-  50%{transform:translate(-12px,14px) rotate(-17deg) scale(1.05)}
-}
-@keyframes blobDrift3{
-  0%,100%{transform:translate(0,0) rotate(7deg) scale(1)}
-  50%{transform:translate(9px,-9px) rotate(13deg) scale(1.06)}
-}
-@keyframes heroEntrance{
-  from{opacity:0;transform:translateY(24px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-@media (max-width:800px){
-  .hero-art .hero-card{animation-duration:9s !important}
-  .hero-art .blob-one{animation-duration:14s !important}
-  .hero-art .blob-two{animation-duration:16s !important}
-  .hero-art .blob-three{animation-duration:15s !important}
-}
-
-@media (prefers-reduced-motion:reduce){
-  .hero-art .hero-card,
-  .hero-art .art-orbit,
-  .hero-art .blob-one,
-  .hero-art .blob-two,
-  .hero-art .blob-three,
-  .hero-copy .hero-kicker,
-  .hero-copy .hero-title,
-  .hero-copy .hero-desc,
-  .hero-copy .hero-actions{animation:none !important}
-}
-
-/* ===== VISIBLE MOTION PACK ===== */
-/* Stronger hero animation: clearly visible on both desktop and mobile. */
-.gradient-text{
-  animation: gradientShiftVisible 3.5s ease-in-out infinite !important;
-  background-size: 300% 100% !important;
-}
-
-.hero-art .art-orbit{
-  animation: orbitSpinVisible 18s linear infinite !important;
-  will-change: transform;
-}
-.hero-art .orbit-b{
-  animation: orbitSpinVisibleB 14s linear infinite !important;
-}
-.hero-art .orbit-c{
-  animation: orbitSpinVisibleC 22s linear infinite !important;
-}
-
-.hero-art .blob-one{
-  animation: blobVisibleA 5.5s ease-in-out infinite !important;
-  will-change: transform;
-}
-.hero-art .blob-two{
-  animation: blobVisibleB 6.5s ease-in-out infinite !important;
-  will-change: transform;
-}
-.hero-art .blob-three{
-  animation: blobVisibleC 5s ease-in-out infinite !important;
-  will-change: transform;
-}
-
-.hero-art .floating-shape{
-  animation: shapeVisible 3.5s ease-in-out infinite !important;
-}
-.hero-art .shape-star{animation-delay:-1s !important}
-.hero-art .shape-cross{animation-delay:-2s !important}
-.hero-art .shape-dot{animation-delay:-2.7s !important}
-
-.hero-art .hero-card{
-  animation: cardVisible 5s ease-in-out infinite !important;
-  will-change: transform;
-}
-.hero-art .hero-card::before{
-  animation: glowVisible 6s linear infinite !important;
-}
-.hero-art::before{
-  animation: ambientVisible 5s ease-in-out infinite !important;
-}
-
-@keyframes gradientShiftVisible{
-  0%,100%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-}
-@keyframes orbitSpinVisible{
-  from{transform:translate(-50%,-50%) rotate(0deg) scale(1)}
-  to{transform:translate(-50%,-50%) rotate(360deg) scale(1.03)}
-}
-@keyframes orbitSpinVisibleB{
-  from{transform:translate(-50%,-50%) rotate(25deg) scaleY(.65)}
-  to{transform:translate(-50%,-50%) rotate(385deg) scaleY(.65)}
-}
-@keyframes orbitSpinVisibleC{
-  from{transform:translate(-50%,-50%) rotate(-25deg) scaleY(.35)}
-  to{transform:translate(-50%,-50%) rotate(335deg) scaleY(.35)}
-}
-@keyframes blobVisibleA{
-  0%,100%{transform:translate(0,0) rotate(14deg) scale(1)}
-  25%{transform:translate(28px,-24px) rotate(24deg) scale(1.06)}
-  50%{transform:translate(-8px,28px) rotate(4deg) scale(.94)}
-  75%{transform:translate(-30px,-8px) rotate(18deg) scale(1.04)}
-}
-@keyframes blobVisibleB{
-  0%,100%{transform:translate(0,0) rotate(-24deg) scale(1)}
-  25%{transform:translate(-25px,22px) rotate(-12deg) scale(1.07)}
-  50%{transform:translate(20px,-28px) rotate(-34deg) scale(.93)}
-  75%{transform:translate(30px,5px) rotate(-18deg) scale(1.04)}
-}
-@keyframes blobVisibleC{
-  0%,100%{transform:translate(0,0) rotate(7deg) scale(1)}
-  33%{transform:translate(20px,-20px) rotate(17deg) scale(1.08)}
-  66%{transform:translate(-18px,-8px) rotate(-5deg) scale(.92)}
-}
-@keyframes shapeVisible{
-  0%,100%{transform:translate(0,0) rotate(0deg) scale(1);opacity:.65}
-  50%{transform:translate(0,-22px) rotate(180deg) scale(1.25);opacity:1}
-}
-@keyframes cardVisible{
-  0%,100%{transform:translate(-50%,-50%) rotate(-7deg) scale(1)}
-  50%{transform:translate(-50%,-50%) rotate(2deg) scale(1.045)}
-}
-@keyframes glowVisible{
-  from{transform:rotate(0deg) scale(1)}
-  to{transform:rotate(360deg) scale(1.12)}
-}
-@keyframes ambientVisible{
-  0%,100%{transform:translate(-50%,-50%) scale(.82);opacity:.45}
-  50%{transform:translate(-50%,-50%) scale(1.12);opacity:1}
-}
-
-/* Keep the animation obvious on phones without making it heavy. */
-@media (max-width:800px){
-  .hero-art .art-orbit{animation-duration:12s !important}
-  .hero-art .orbit-b{animation-duration:10s !important}
-  .hero-art .orbit-c{animation-duration:16s !important}
-  .hero-art .blob-one{animation-duration:4.5s !important}
-  .hero-art .blob-two{animation-duration:5.5s !important}
-  .hero-art .blob-three{animation-duration:4.2s !important}
-  .hero-art .floating-shape{animation-duration:3s !important}
-  .hero-art .hero-card{animation-duration:4.5s !important}
-  .hero-art .hero-card::before{animation-duration:5s !important}
-  .hero-art::before{animation-duration:4.5s !important}
-}
-
-@media (prefers-reduced-motion:reduce){
-  .gradient-text,.hero-art .art-orbit,.hero-art .blob,.hero-art .floating-shape,
-  .hero-art .hero-card,.hero-art .hero-card::before,.hero-art::before{animation:none !important}
-}
-.preloader-bar.hide{opacity:0;visibility:hidden;transition:opacity .7s ease,visibility .7s ease}
