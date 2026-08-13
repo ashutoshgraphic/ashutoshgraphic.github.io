@@ -183,11 +183,7 @@ button,a{cursor:pointer}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s var(--ease)}
 .reveal.show{opacity:1;transform:translateY(0)}
 .delay-1{transition-delay:.1s}.delay-2{transition-delay:.18s}.delay-3{transition-delay:.26s}.delay-4{transition-delay:.34s}.delay-5{transition-delay:.42s}
-.cursor-dot,.cursor-ring{position:fixed;pointer-events:none;z-index:1500;top:0;left:0;transform:translate(-50%,-50%);display:none}
-.cursor-dot{width:6px;height:6px;border-radius:50%;background:var(--text)}
-.cursor-ring{width:38px;height:38px;border:1px solid rgba(255,255,255,.45);border-radius:50%;transition:width .2s,height .2s}
-@media (pointer:fine){.cursor-dot,.cursor-ring{display:block}}
-.magnetic{will-change:transform}
+}
 @media(max-width:1050px){
   .nav{gap:16px}
   .hero-grid{grid-template-columns:1fr}
@@ -255,327 +251,204 @@ button,a{cursor:pointer}
   }
 }
 
-/* HOME PERFORMANCE MODE */
-.hero-art .art-orbit,
-.hero-art .blob,
-.hero-art .floating-shape,
-.hero-art .hero-card::before{
-  animation:none !important;
-}
-.hero-art .hero-card{
-  will-change:auto;
-}
-.hero-art .crystal,
-.hero-art .crystal-small{
-  animation:none !important;
-}
-.brand-orb{
-  animation:none !important;
-}
-.name-highlight,
-.name-hero{
-  animation:none !important;
-}
 
-/* BALANCED HOME ANIMATION */
+/* V12 — CLEAN, LIGHTWEIGHT HERO MOTION */
+.hero-art{
+  isolation:isolate;
+}
 .hero-art .art-orbit{
-  animation: softOrbit 9s ease-in-out infinite !important;
+  animation: heroRing 14s ease-in-out infinite;
+  transform-origin: center;
   will-change: transform, opacity;
 }
 .hero-art .orbit-b{
-  animation-direction: reverse;
-  animation-duration: 11s;
+  animation: heroRingReverse 18s ease-in-out infinite;
 }
 .hero-art .orbit-c{
-  animation-duration: 13s;
+  animation: heroRing 22s ease-in-out infinite reverse;
 }
 .hero-art .blob-one{
-  animation: softFloatA 8s ease-in-out infinite !important;
+  animation: floatOne 8s ease-in-out infinite;
+  will-change: transform;
 }
 .hero-art .blob-two{
-  animation: softFloatB 10s ease-in-out infinite !important;
+  animation: floatTwo 10s ease-in-out infinite;
+  will-change: transform;
 }
 .hero-art .blob-three{
-  animation: softFloatC 9s ease-in-out infinite !important;
+  animation: floatThree 9s ease-in-out infinite;
+  will-change: transform;
 }
 .hero-art .floating-shape{
-  animation: softFloatShape 6s ease-in-out infinite !important;
+  animation: sparkle 6s ease-in-out infinite;
+  will-change: transform, opacity;
 }
-.hero-art .shape-cross{animation-delay:-1.5s !important}
-.hero-art .shape-dot{animation-delay:-3s !important}
-.hero-art .hero-card::before{
-  animation: softGlow 12s linear infinite !important;
-}
-.brand-orb{
-  animation: brandPulse 8s ease-in-out infinite !important;
-}
-.name-highlight,.name-hero{
-  animation: nameShimmer 8s ease-in-out infinite !important;
-}
-
-@keyframes softOrbit{
-  0%,100%{transform:translate(-50%,-50%) rotate(0deg) scale(1);opacity:.8}
-  50%{transform:translate(-50%,-50%) rotate(4deg) scale(1.015);opacity:1}
-}
-@keyframes softFloatA{
-  0%,100%{transform:translate3d(0,0,0) rotate(0deg)}
-  50%{transform:translate3d(8px,-10px,0) rotate(3deg)}
-}
-@keyframes softFloatB{
-  0%,100%{transform:translate3d(0,0,0) rotate(0deg)}
-  50%{transform:translate3d(-7px,8px,0) rotate(-3deg)}
-}
-@keyframes softFloatC{
-  0%,100%{transform:translate3d(0,0,0) rotate(0deg)}
-  50%{transform:translate3d(6px,-6px,0) rotate(2deg)}
-}
-@keyframes softFloatShape{
-  0%,100%{transform:translateY(0) rotate(0deg);opacity:.82}
-  50%{transform:translateY(-9px) rotate(6deg);opacity:1}
-}
-@keyframes softGlow{
-  0%{transform:rotate(0deg)}
-  100%{transform:rotate(360deg)}
-}
-@keyframes brandPulse{
-  0%,100%{transform:scale(1) rotate(0deg)}
-  50%{transform:scale(1.05) rotate(8deg)}
-}
-@keyframes nameShimmer{
-  0%,100%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-}
-@media (max-width:800px){
-  .hero-art .art-orbit{animation-duration:14s !important}
-  .hero-art .blob-one{animation-duration:12s !important}
-  .hero-art .blob-two{animation-duration:14s !important}
-  .hero-art .blob-three{animation-duration:13s !important}
-  .hero-art .floating-shape{animation-duration:9s !important}
-  .hero-art .hero-card::before{animation-duration:18s !important}
-}
-
-@media (prefers-reduced-motion: reduce){
-  .hero-art .art-orbit,
-  .hero-art .blob,
-  .hero-art .floating-shape,
-  .hero-art .hero-card::before,
-  .brand-orb,
-  .name-highlight,
-  .name-hero{animation:none !important}
-}
-
-/* Keep the hero shapes organic; make only the glow behind them circular. */
-.hero-art .blob-one{border-radius:44% 56% 61% 39% / 53% 37% 63% 47% !important;}
-.hero-art .blob-two{border-radius:44% 56% 61% 39% / 53% 37% 63% 47% !important;}
-.hero-art .blob-three{border-radius:44% 56% 61% 39% / 53% 37% 63% 47% !important;}
-
-/* Circular multi-color gradient glow behind the hero artwork. */
-.hero-art::before{
-  content:"";
-  position:absolute;
-  width:620px;
-  height:620px;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-  border-radius:50%;
-  background:
-    radial-gradient(circle at 30% 32%, rgba(255,79,163,.30), transparent 28%),
-    radial-gradient(circle at 68% 30%, rgba(124,92,255,.32), transparent 30%),
-    radial-gradient(circle at 52% 70%, rgba(66,232,255,.24), transparent 30%),
-    radial-gradient(circle at 34% 72%, rgba(201,255,68,.18), transparent 24%);
-  filter:blur(38px);
-  opacity:.9;
-  pointer-events:none;
-  z-index:0;
-}
-.hero-art > *{
-  z-index:1;
-}
-
-/* V10 — NEW HERO MOTION
-   Different from the previous up/down float:
-   shapes gently drift around their own small orbital paths,
-   while the center card breathes and the background glow pulses.
-*/
-.hero-art .art-orbit{
-  animation: ringBreath 10s ease-in-out infinite !important;
-}
-.hero-art .orbit-b{
-  animation: ringBreathReverse 12s ease-in-out infinite !important;
-}
-.hero-art .orbit-c{
-  animation: ringBreath 15s ease-in-out infinite !important;
-}
-
-.hero-art .blob-one{
-  animation: orbitBlobA 9s ease-in-out infinite !important;
-}
-.hero-art .blob-two{
-  animation: orbitBlobB 11s ease-in-out infinite !important;
-}
-.hero-art .blob-three{
-  animation: orbitBlobC 10s ease-in-out infinite !important;
-}
-
-.hero-art .floating-shape{
-  animation: sparkleFloat 7s ease-in-out infinite !important;
-}
-.hero-art .shape-cross{animation-delay:-1.8s !important}
-.hero-art .shape-dot{animation-delay:-3.6s !important}
-
+.hero-art .shape-cross{animation-delay:-2s}
+.hero-art .shape-dot{animation-delay:-3s}
 .hero-art .hero-card{
-  animation: cardBreath 8s ease-in-out infinite !important;
-  will-change:transform;
+  animation: cardFloat 7s ease-in-out infinite;
+  will-change: transform;
 }
 .hero-art .hero-card::before{
-  animation: glowSweep 14s linear infinite !important;
+  animation: cardGlow 16s linear infinite;
 }
 .hero-art::before{
-  animation: ambientPulse 9s ease-in-out infinite !important;
+  animation: glowPulse 10s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
-/* New keyframes */
-@keyframes ringBreath{
-  0%,100%{transform:translate(-50%,-50%) scale(1) rotate(0deg);opacity:.55}
-  50%{transform:translate(-50%,-50%) scale(1.035) rotate(3deg);opacity:.9}
+@keyframes heroRing{
+  0%,100%{transform:translate(-50%,-50%) rotate(0deg) scale(1);opacity:.45}
+  50%{transform:translate(-50%,-50%) rotate(5deg) scale(1.025);opacity:.85}
 }
-@keyframes ringBreathReverse{
-  0%,100%{transform:translate(-50%,-50%) scale(1.01) rotate(22deg);opacity:.5}
-  50%{transform:translate(-50%,-50%) scale(.97) rotate(28deg);opacity:.85}
+@keyframes heroRingReverse{
+  0%,100%{transform:translate(-50%,-50%) rotate(25deg) scale(1);opacity:.4}
+  50%{transform:translate(-50%,-50%) rotate(31deg) scale(.98);opacity:.78}
 }
-@keyframes orbitBlobA{
-  0%,100%{transform:translate(0,0) rotate(0deg) scale(1)}
-  25%{transform:translate(12px,-8px) rotate(4deg) scale(1.025)}
-  50%{transform:translate(7px,13px) rotate(8deg) scale(.99)}
-  75%{transform:translate(-10px,7px) rotate(4deg) scale(1.02)}
+@keyframes floatOne{
+  0%,100%{transform:translate3d(0,0,0) rotate(0deg)}
+  50%{transform:translate3d(12px,-10px,0) rotate(3deg)}
 }
-@keyframes orbitBlobB{
-  0%,100%{transform:translate(0,0) rotate(0deg) scale(1)}
-  25%{transform:translate(-10px,8px) rotate(-5deg) scale(1.03)}
-  50%{transform:translate(-5px,-12px) rotate(-9deg) scale(.98)}
-  75%{transform:translate(9px,-4px) rotate(-4deg) scale(1.015)}
+@keyframes floatTwo{
+  0%,100%{transform:translate3d(0,0,0) rotate(0deg)}
+  50%{transform:translate3d(-10px,9px,0) rotate(-4deg)}
 }
-@keyframes orbitBlobC{
-  0%,100%{transform:translate(0,0) rotate(0deg) scale(1)}
-  30%{transform:translate(8px,-6px) rotate(3deg) scale(1.02)}
-  60%{transform:translate(-6px,-10px) rotate(-4deg) scale(.985)}
+@keyframes floatThree{
+  0%,100%{transform:translate3d(0,0,0) rotate(0deg)}
+  50%{transform:translate3d(8px,-7px,0) rotate(3deg)}
 }
-@keyframes sparkleFloat{
-  0%,100%{transform:translate3d(0,0,0) rotate(0deg);opacity:.72}
-  35%{transform:translate3d(5px,-8px,0) rotate(8deg);opacity:1}
-  70%{transform:translate3d(-5px,4px,0) rotate(-5deg);opacity:.86}
+@keyframes sparkle{
+  0%,100%{transform:translateY(0) rotate(0deg);opacity:.7}
+  50%{transform:translateY(-10px) rotate(10deg);opacity:1}
 }
-@keyframes cardBreath{
-  0%,100%{transform:translate(-50%,-50%) rotate(-7deg) scale(1)}
-  50%{transform:translate(-50%,-50%) rotate(-4deg) scale(1.018)}
+@keyframes cardFloat{
+  0%,100%{transform:translate(-50%,-50%) rotate(-6deg)}
+  50%{transform:translate(-50%,-53%) rotate(-3deg)}
 }
-@keyframes glowSweep{
+@keyframes cardGlow{
   from{transform:rotate(0deg)}
   to{transform:rotate(360deg)}
 }
-@keyframes ambientPulse{
+@keyframes glowPulse{
   0%,100%{transform:translate(-50%,-50%) scale(.96);opacity:.65}
-  50%{transform:translate(-50%,-50%) scale(1.04);opacity:.95}
+  50%{transform:translate(-50%,-50%) scale(1.04);opacity:.9}
 }
 
-@media (max-width:800px){
-  .hero-art .art-orbit{animation-duration:14s !important}
-  .hero-art .orbit-b{animation-duration:16s !important}
-  .hero-art .orbit-c{animation-duration:19s !important}
-  .hero-art .blob-one{animation-duration:12s !important}
-  .hero-art .blob-two{animation-duration:14s !important}
-  .hero-art .blob-three{animation-duration:13s !important}
-  .hero-art .floating-shape{animation-duration:10s !important}
-  .hero-art .hero-card{animation-duration:11s !important}
-  .hero-art::before{animation-duration:12s !important}
+/* MOBILE: artwork first, text second, no overlap */
+@media(max-width:800px){
+  .hero{
+    min-height:auto;
+    padding-top:92px;
+    padding-bottom:55px;
+  }
+  .hero-grid{
+    display:flex;
+    flex-direction:column;
+    gap:28px;
+  }
+  .hero-art{
+    order:1;
+    width:100%;
+    height:310px;
+    min-height:310px;
+    overflow:hidden;
+  }
+  .hero-copy{
+    order:2;
+    width:100%;
+    margin:0 !important;
+    padding:0 !important;
+  }
+  .hero-title{
+    font-size:clamp(47px,13vw,68px);
+    line-height:.9;
+    letter-spacing:-3px;
+    word-break:normal;
+  }
+  .hero-desc{
+    max-width:100%;
+    margin-top:20px;
+    font-size:14px;
+  }
+  .hero-actions{
+    margin-top:22px;
+  }
+  .hero-actions .btn{
+    width:auto;
+  }
+  .hero-meta{
+    margin-top:30px;
+  }
+
+  .art-orbit.orbit-a{width:300px;height:300px}
+  .art-orbit.orbit-b{width:235px;height:235px}
+  .art-orbit.orbit-c{width:340px;height:340px}
+
+  .blob-one{width:205px;height:160px}
+  .blob-two{width:160px;height:140px}
+  .blob-three{width:120px;height:104px}
+
+  .hero-card{
+    width:250px;
+    max-width:72%;
+    border-radius:20px;
+  }
+  .ring-word{width:160px;height:160px}
+  .card-core{font-size:40px}
+  .card-top,.card-bottom{font-size:7px}
+  .shape-star{font-size:28px}
+  .shape-cross{font-size:32px}
+  .shape-dot{font-size:15px}
 }
 
-@media (prefers-reduced-motion:reduce){
+@media(max-width:560px){
+  .hero-art{
+    height:285px;
+    min-height:285px;
+  }
+  .hero-title{
+    font-size:clamp(44px,13.5vw,60px);
+    letter-spacing:-2.5px;
+  }
+  .hero-kicker{
+    margin-bottom:14px;
+  }
+  .hero-desc{
+    font-size:13px;
+    line-height:1.75;
+  }
+  .hero-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .hero-actions .btn{
+    width:100%;
+  }
+  .hero-meta{
+    gap:18px;
+  }
+  .hero-meta strong{
+    font-size:21px;
+  }
+}
+
+/* Keep the animation visible on desktop but slower on phones */
+@media(min-width:801px){
+  .hero-art .art-orbit{animation-duration:14s}
+  .hero-art .blob-one{animation-duration:8s}
+  .hero-art .blob-two{animation-duration:10s}
+  .hero-art .blob-three{animation-duration:9s}
+}
+
+@media(prefers-reduced-motion:reduce){
   .hero-art .art-orbit,
-  .hero-art .blob,
+  .hero-art .blob-one,
+  .hero-art .blob-two,
+  .hero-art .blob-three,
   .hero-art .floating-shape,
   .hero-art .hero-card,
   .hero-art .hero-card::before,
   .hero-art::before{
     animation:none !important;
   }
-}
-
-/* V11 MOBILE HOME LAYOUT FIX
-   Keep artwork and typography in separate blocks so nothing overlaps on phones. */
-@media (max-width: 800px){
-  .hero{
-    min-height:auto;
-    padding-top:95px;
-    padding-bottom:48px;
-  }
-  .hero-grid{
-    display:flex;
-    flex-direction:column;
-    align-items:stretch;
-    gap:8px;
-  }
-  .hero-art{
-    order:1;
-    width:100%;
-    height:340px;
-    margin:0;
-    overflow:hidden;
-    flex:none;
-  }
-  .hero-copy{
-    order:2;
-    width:100%;
-    margin:0 !important;
-    padding:0 8px;
-  }
-  .hero-kicker{margin-bottom:14px}
-  .hero-title{
-    font-size:clamp(50px,14vw,68px);
-    line-height:.9;
-    letter-spacing:-4px;
-    max-width:100%;
-  }
-  .hero-desc{
-    max-width:100%;
-    font-size:14px;
-    line-height:1.75;
-    margin-top:22px;
-  }
-  .hero-actions{
-    margin-top:24px;
-  }
-  .hero-meta{
-    margin-top:34px;
-  }
-  .scroll-cue{
-    margin-top:24px;
-  }
-
-  /* Scale the hero artwork so it stays inside the phone width. */
-  .orbit-a{width:310px;height:310px}
-  .orbit-b{width:245px;height:245px}
-  .orbit-c{width:355px;height:355px}
-  .blob-one{width:210px;height:165px}
-  .blob-two{width:165px;height:145px}
-  .blob-three{width:125px;height:108px}
-  .hero-card{width:min(260px,74%);border-radius:22px}
-  .ring-word{width:165px;height:165px}
-  .card-core{font-size:42px}
-  .shape-star{font-size:30px}
-  .shape-cross{font-size:34px}
-  .shape-dot{font-size:16px}
-}
-
-@media (max-width:560px){
-  .hero-art{height:300px}
-  .hero-copy{padding:0 4px}
-  .hero-title{font-size:clamp(46px,13vw,60px);letter-spacing:-3px}
-  .hero-description{font-size:13px}
-  .hero-actions{flex-direction:column;align-items:stretch}
-  .hero-actions .btn{width:100%}
-  .hero-meta{gap:20px}
-  .hero-meta strong{font-size:21px}
-  .hero-meta span{font-size:8px}
 }
