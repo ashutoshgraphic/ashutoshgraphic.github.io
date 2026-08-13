@@ -1,703 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ashutosh — a vibrant animated graphic designer portfolio." />
+  <title>Ashutosh — Graphic Designer</title>
 
-    <title>Ashutosh | Graphic Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <meta name="description"
-        content="Ashutosh is a professional graphic designer specializing in CorelDRAW, Adobe Photoshop and Canva.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+<div class="preloader-bar"><span></span></div>
+  </div>
 
-    <!-- ================= NAVBAR ================= -->
+  <div class="aurora">
+    <span></span><span></span><span></span><span></span>
+  </div>
 
-    <header class="navbar">
+  <div class="noise"></div>
 
-        <div class="container nav-container">
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Home">
+      <span class="brand-orb"></span>
+      <span class="brand-name">ASHUTOSH</span>
+    </a>
 
-            <a href="#home" class="logo">
-                A<span>.</span>
-            </a>
+    <nav class="nav" id="nav">
+      <a href="#home" class="active">Home</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-            <nav class="nav-menu" id="navMenu">
+    <div class="top-actions">
+      <button class="theme-btn magnetic" id="themeBtn" aria-label="Toggle light and dark mode">
+        <span>◐</span>
+      </button>
+      <button class="menu-btn magnetic" id="menuBtn" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-                <a href="#home" class="active">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#services">Services</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#contact">Contact</a>
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow reveal">INDEPENDENT GRAPHIC DESIGNER</div>
+          <p class="hero-kicker reveal delay-1">HELLO, I'M</p>
 
-            </nav>
+          <h1 class="hero-title reveal delay-2">
+            <span class="line name-hero">ASHUTOSH</span>
+            <span class="line gradient-text">CREATIVE</span>
+            <span class="line stroke-text">DESIGNER.</span>
+          </h1>
 
-            <div class="nav-actions">
+          <p class="hero-desc reveal delay-3">
+            I turn ideas into bold visual identities, posters, social creatives
+            and memorable digital experiences.
+          </p>
 
-                <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
-                    <i class="fa-solid fa-sun"></i>
-                </button>
+          <div class="hero-actions reveal delay-4">
+            <a href="#work" class="btn btn-primary magnetic">Explore Work <span>↗</span></a>
+            <a href="#contact" class="btn btn-ghost magnetic">Let's Create <span>→</span></a>
+          </div>
 
-                <a href="#contact" class="nav-contact">
-                    Let's Talk
-                </a>
-
-                <button class="menu-btn" id="menuBtn">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-
+          <div class="hero-meta reveal delay-5">
+            <div>
+              <strong>03</strong>
+              <span>CORE TOOLS</span>
             </div>
-
+            <div>
+              <strong>∞</strong>
+              <span>IDEAS</span>
+            </div>
+            <div>
+              <strong>01</strong>
+              <span>GOAL: IMPACT</span>
+            </div>
+          </div>
         </div>
 
-    </header>
+        <div class="hero-art">
+          <div class="art-orbit orbit-a"></div>
+          <div class="art-orbit orbit-b"></div>
+          <div class="art-orbit orbit-c"></div>
 
+          <div class="blob blob-one"></div>
+          <div class="blob blob-two"></div>
+          <div class="blob blob-three"></div>
 
-    <!-- ================= HERO ================= -->
+          <div class="floating-shape shape-star">✦</div>
+          <div class="floating-shape shape-cross">+</div>
+          <div class="floating-shape shape-dot">●</div>
 
-    <main>
-
-        <section class="hero" id="home">
-
-            <div class="hero-glow glow-one"></div>
-            <div class="hero-glow glow-two"></div>
-
-            <div class="container hero-container">
-
-                <div class="hero-content">
-
-                    <div class="availability">
-                        <span></span>
-                        Available for freelance work
-                    </div>
-
-                    <p class="hero-small">
-                        HELLO, I'M
-                    </p>
-
-                    <h1>
-                        Ashutosh
-                        <br>
-                        <span>Graphic Designer.</span>
-                    </h1>
-
-                    <p class="hero-description">
-                        I create clean, creative and impactful visual designs
-                        that help brands stand out and communicate better.
-                    </p>
-
-                    <div class="hero-buttons">
-
-                        <a href="#portfolio" class="btn btn-primary">
-                            View My Work
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-
-                        <a href="#contact" class="btn btn-outline">
-                            Let's Work Together
-                        </a>
-
-                    </div>
-
-                    <div class="hero-tools">
-
-                        <span>TOOLS I USE</span>
-
-                        <div class="tool-mini">
-                            <i class="fa-solid fa-pen-nib"></i>
-                            CorelDRAW
-                        </div>
-
-                        <div class="tool-mini">
-                            <i class="fa-solid fa-image"></i>
-                            Photoshop
-                        </div>
-
-                        <div class="tool-mini">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                            Canva
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="hero-visual">
-
-                    <div class="design-card">
-
-                        <div class="card-top">
-                            <span>CREATIVE</span>
-
-                            <span class="card-number">
-                                01 / 03
-                            </span>
-                        </div>
-
-                        <div class="creative-symbol">
-                            <span class="circle"></span>
-                            <span class="square"></span>
-                            <span class="triangle"></span>
-                        </div>
-
-                        <div class="card-bottom">
-
-                            <div>
-                                <small>DESIGN</small>
-                                <strong>CREATE<br>INSPIRE</strong>
-                            </div>
-
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        </div>
-
-                    </div>
-
-                    <div class="floating-badge badge-one">
-                        <i class="fa-solid fa-star"></i>
-                        Creative
-                    </div>
-
-                    <div class="floating-badge badge-two">
-                        <i class="fa-solid fa-bolt"></i>
-                        Modern
-                    </div>
-
-                </div>
-
+          <div class="hero-card" id="heroCard">
+            <div class="card-top">
+              <span>VISUAL / 001</span>
+              <span>∞</span>
             </div>
-
-        </section>
-
-
-        <!-- ================= ABOUT ================= -->
-
-        <section class="section" id="about">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <span class="section-number">01</span>
-
-                    <div>
-                        <p class="section-label">ABOUT ME</p>
-
-                        <h2>
-                            Turning ideas into
-                            <span>visual stories.</span>
-                        </h2>
-                    </div>
-
-                </div>
-
-
-                <div class="about-grid">
-
-                    <div class="about-image">
-
-                        <div class="about-pattern"></div>
-
-                        <div class="about-initial">
-                            A
-                        </div>
-
-                        <div class="about-tag">
-                            GRAPHIC
-                            <br>
-                            DESIGNER
-                        </div>
-
-                    </div>
-
-
-                    <div class="about-content">
-
-                        <h3>
-                            Design is not just what it looks like.
-                            It's how it communicates.
-                        </h3>
-
-                        <p>
-                            I'm Ashutosh, a passionate graphic designer
-                            focused on creating modern, clean and memorable
-                            visual experiences.
-                        </p>
-
-                        <p>
-                            From social media creatives and posters to
-                            branding and promotional designs, I enjoy turning
-                            simple ideas into designs that grab attention.
-                        </p>
-
-                        <div class="about-stats">
-
-                            <div>
-                                <strong>03+</strong>
-                                <span>Design Tools</span>
-                            </div>
-
-                            <div>
-                                <strong>100%</strong>
-                                <span>Creative Focus</span>
-                            </div>
-
-                            <div>
-                                <strong>24/7</strong>
-                                <span>Ideas</span>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+            <div class="hero-card-center">
+              <div class="ring-word">DESIGN</div>
+              <div class="card-core">CREATE</div>
             </div>
-
-        </section>
-
-
-        <!-- ================= SKILLS ================= -->
-
-        <section class="section skills-section" id="skills">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <span class="section-number">02</span>
-
-                    <div>
-                        <p class="section-label">MY SKILLS</p>
-
-                        <h2>
-                            Tools behind
-                            <span>my creativity.</span>
-                        </h2>
-                    </div>
-
-                </div>
-
-
-                <div class="skills-grid">
-
-                    <div class="skill-card">
-
-                        <div class="skill-icon corel">
-                            C
-                        </div>
-
-                        <div>
-                            <h3>CorelDRAW</h3>
-                            <p>
-                                Vector design, logos, banners,
-                                print design and branding.
-                            </p>
-                        </div>
-
-                        <span class="skill-arrow">
-                            01
-                        </span>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <div class="skill-icon photoshop">
-                            Ps
-                        </div>
-
-                        <div>
-                            <h3>Adobe Photoshop</h3>
-                            <p>
-                                Photo editing, creative compositions,
-                                posters and digital graphics.
-                            </p>
-                        </div>
-
-                        <span class="skill-arrow">
-                            02
-                        </span>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <div class="skill-icon canva">
-                            Ca
-                        </div>
-
-                        <div>
-                            <h3>Canva</h3>
-                            <p>
-                                Social media posts, presentations,
-                                marketing creatives and quick designs.
-                            </p>
-                        </div>
-
-                        <span class="skill-arrow">
-                            03
-                        </span>
-
-                    </div>
-
-                </div>
-
+            <div class="card-bottom">
+              <span>IDEA → FORM</span>
+              <span>PLAY / REFINE / SHIP</span>
             </div>
+          </div>
+        </div>
+      </div>
 
-        </section>
+      <div class="scroll-cue">
+        <span class="scroll-line"></span>
+        <span>SCROLL TO EXPLORE</span>
+      </div>
+    </section>
+<section class="section work-section" id="work">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">SELECTED WORK</span>
+          <h2>Ideas that <em>move.</em></h2>
+        </div>
+        <p>Replace the placeholders below with your real projects later.</p>
+      </div>
 
+      <div class="filters reveal delay-1">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="poster">Posters</button>
+        <button class="filter" data-filter="branding">Branding</button>
+        <button class="filter" data-filter="social">Social</button>
+        <button class="filter" data-filter="logo">Logos</button>
+      </div>
 
-        <!-- ================= SERVICES ================= -->
+      <div class="work-grid" id="workGrid">
+        <article class="work-card size-xl tilt-item" data-category="poster">
+          <div class="work-art art-purple">
+            <span class="micro">01 / POSTER</span>
+            <div class="art-word">BOLD</div>
+            <div class="art-sub">TYPE / ENERGY / FORM</div>
+          </div>
+          <div class="work-info">
+            <div><span>POSTER DESIGN</span><h3>Bold Type Experiment</h3></div>
+            <button class="round-arrow" aria-label="Open project">↗</button>
+          </div>
+        </article>
 
-        <section class="section" id="services">
+        <article class="work-card size-m tilt-item" data-category="branding">
+          <div class="work-art art-lime">
+            <span class="micro">02 / BRANDING</span>
+            <div class="stamp">BRAND<br>PLAY</div>
+          </div>
+          <div class="work-info">
+            <div><span>BRAND IDENTITY</span><h3>Playful Identity</h3></div>
+            <button class="round-arrow" aria-label="Open project">↗</button>
+          </div>
+        </article>
 
-            <div class="container">
+        <article class="work-card size-m tilt-item" data-category="social">
+          <div class="work-art art-coral">
+            <span class="micro">03 / SOCIAL</span>
+            <div class="stacked-text">SOCIAL<br>VIBES</div>
+          </div>
+          <div class="work-info">
+            <div><span>SOCIAL MEDIA</span><h3>Campaign Graphics</h3></div>
+            <button class="round-arrow" aria-label="Open project">↗</button>
+          </div>
+        </article>
 
-                <div class="section-heading">
+        <article class="work-card size-m tilt-item" data-category="logo">
+          <div class="work-art art-cyan">
+            <span class="micro">04 / LOGO</span>
+            <div class="logo-mark">A</div>
+          </div>
+          <div class="work-info">
+            <div><span>LOGO DESIGN</span><h3>Monogram System</h3></div>
+            <button class="round-arrow" aria-label="Open project">↗</button>
+          </div>
+        </article>
 
-                    <span class="section-number">03</span>
+        <article class="work-card size-xl tilt-item" data-category="branding">
+          <div class="work-art art-sunset">
+            <span class="micro">05 / BRANDING</span>
+            <div class="sun-disc"></div>
+            <div class="sun-type">SUNSET<br>SYSTEM</div>
+          </div>
+          <div class="work-info">
+            <div><span>VISUAL IDENTITY</span><h3>Sunset Brand World</h3></div>
+            <button class="round-arrow" aria-label="Open project">↗</button>
+          </div>
+        </article>
 
-                    <div>
-                        <p class="section-label">WHAT I DO</p>
-
-                        <h2>
-                            Creative services
-                            <span>for your brand.</span>
-                        </h2>
-                    </div>
-
-                </div>
-
-
-                <div class="services-grid">
-
-                    <div class="service-card">
-
-                        <span class="service-number">01</span>
-
-                        <i class="fa-solid fa-pen-nib"></i>
-
-                        <h3>Logo Design</h3>
-
-                        <p>
-                            Clean and memorable logos that give
-                            your brand a strong visual identity.
-                        </p>
-
-                    </div>
-
-
-                    <div class="service-card">
-
-                        <span class="service-number">02</span>
-
-                        <i class="fa-solid fa-image"></i>
-
-                        <h3>Poster Design</h3>
-
-                        <p>
-                            Eye-catching posters designed to
-                            communicate your message clearly.
-                        </p>
-
-                    </div>
-
-
-                    <div class="service-card">
-
-                        <span class="service-number">03</span>
-
-                        <i class="fa-solid fa-hashtag"></i>
-
-                        <h3>Social Media Design</h3>
-
-                        <p>
-                            Creative social media graphics that
-                            help your content stand out.
-                        </p>
-
-                    </div>
-
-
-                    <div class="service-card">
-
-                        <span class="service-number">04</span>
-
-                        <i class="fa-solid fa-layer-group"></i>
-
-                        <h3>Branding Design</h3>
-
-                        <p>
-                            Consistent visual identity and
-                            promotional materials for businesses.
-                        </p>
-
-                    </div>
-
-                </div>
-
+        <article class="work-card size-m tilt-item" data-category="poster">
+          <div class="work-art art-violet">
+            <span class="micro">06 / POSTER</span>
+            <div class="poster-grid">
+              <i></i><i></i><i></i><i></i>
             </div>
-
-        </section>
-
-
-        <!-- ================= PORTFOLIO ================= -->
-
-        <section class="section portfolio-section" id="portfolio">
-
-            <div class="container">
-
-                <div class="section-heading portfolio-heading">
-
-                    <div>
-
-                        <p class="section-label">SELECTED WORK</p>
-
-                        <h2>
-                            My creative
-                            <span>portfolio.</span>
-                        </h2>
-
-                    </div>
-
-                    <p class="heading-description">
-                        A collection of creative work.
-                        Replace these demo cards with your actual designs.
-                    </p>
-
-                </div>
-
-
-                <div class="portfolio-grid">
-
-                    <div class="portfolio-item large">
-
-                        <div class="portfolio-placeholder">
-                            <span>YOUR DESIGN</span>
-                            <strong>POSTER</strong>
-                        </div>
-
-                        <div class="portfolio-info">
-                            <div>
-                                <small>01 / POSTER DESIGN</small>
-                                <h3>Creative Poster</h3>
-                            </div>
-
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-
-                    </div>
-
-
-                    <div class="portfolio-item">
-
-                        <div class="portfolio-placeholder purple">
-                            <span>YOUR DESIGN</span>
-                            <strong>BRANDING</strong>
-                        </div>
-
-                        <div class="portfolio-info">
-                            <div>
-                                <small>02 / BRANDING</small>
-                                <h3>Brand Identity</h3>
-                            </div>
-
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-
-                    </div>
-
-
-                    <div class="portfolio-item">
-
-                        <div class="portfolio-placeholder orange">
-                            <span>YOUR DESIGN</span>
-                            <strong>SOCIAL</strong>
-                        </div>
-
-                        <div class="portfolio-info">
-                            <div>
-                                <small>03 / SOCIAL MEDIA</small>
-                                <h3>Social Creative</h3>
-                            </div>
-
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-
-                    </div>
-
-
-                    <div class="portfolio-item">
-
-                        <div class="portfolio-placeholder green">
-                            <span>YOUR DESIGN</span>
-                            <strong>LOGO</strong>
-                        </div>
-
-                        <div class="portfolio-info">
-                            <div>
-                                <small>04 / LOGO DESIGN</small>
-                                <h3>Modern Logo</h3>
-                            </div>
-
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= CONTACT ================= -->
-
-        <section class="section contact-section" id="contact">
-
-            <div class="container">
-
-                <div class="contact-box">
-
-                    <div class="contact-content">
-
-                        <p class="section-label">
-                            HAVE A PROJECT?
-                        </p>
-
-                        <h2>
-                            Let's create something
-                            <span>amazing together.</span>
-                        </h2>
-
-                        <p>
-                            Have a design project in mind?
-                            Let's discuss your idea and turn it
-                            into a professional visual experience.
-                        </p>
-
-                        <div class="contact-buttons">
-
-                            <a href="tel:+919399417616"
-                               class="btn btn-primary">
-
-                                <i class="fa-solid fa-phone"></i>
-                                Call Me
-
-                            </a>
-
-                            <a href="https://wa.me/919399417616"
-                               target="_blank"
-                               class="btn btn-whatsapp">
-
-                                <i class="fa-brands fa-whatsapp"></i>
-                                WhatsApp
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="contact-details">
-
-                        <div class="contact-detail">
-
-                            <span>PHONE</span>
-
-                            <a href="tel:+919399417616">
-                                +91 93994 17616
-                            </a>
-
-                        </div>
-
-
-                        <div class="contact-detail">
-
-                            <span>AVAILABLE FOR</span>
-
-                            <strong>
-                                Freelance Projects
-                            </strong>
-
-                        </div>
-
-
-                        <div class="contact-detail">
-
-                            <span>SPECIALIZATION</span>
-
-                            <strong>
-                                Graphic Design
-                            </strong>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <div class="container footer-container">
-
-            <div class="footer-logo">
-                A<span>.</span>
-            </div>
-
-            <p>
-                © 2026 Ashutosh. Designed with creativity.
-            </p>
-
-            <div class="footer-social">
-
-                <a href="tel:+919399417616"
-                   aria-label="Phone">
-                    <i class="fa-solid fa-phone"></i>
-                </a>
-
-                <a href="https://wa.me/919399417616"
-                   target="_blank"
-                   aria-label="WhatsApp">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </a>
-
-            </div>
-
+          </div>
+          <div class="work-info">
+            <div><span>POSTER DESIGN</span><h3>Grid & Motion</h3></div>
+            <button class="round-arrow" aria-label="Open project">↗</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="about-layout">
+        <div class="about-visual reveal">
+          <div class="about-gridlines"></div>
+          <div class="about-sphere"></div>
+          <div class="about-note">YOUR<br>STORY<br>MATTERS.</div>
+          <div class="about-number">002</div>
         </div>
 
-    </footer>
+        <div class="about-copy reveal delay-1">
+          <span class="eyebrow">ABOUT</span>
+          <h2>Good design feels <em>alive.</em></h2>
+          <p>
+            I am a graphic designer who enjoys mixing typography, color,
+            composition and motion to create visuals that feel fresh,
+            confident and memorable.
+          </p>
+          <p>
+            This section is intentionally written as a placeholder so you can
+            later add your own story, experience and design philosophy.
+          </p>
 
+          <div class="about-pills">
+            <span>VISUAL THINKING</span>
+            <span>BRANDING</span>
+            <span>POSTERS</span>
+            <span>SOCIAL DESIGN</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <section class="section skills-section" id="skills">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">CORE TOOLS</span>
+          <h2>Made with <em>purpose.</em></h2>
+        </div>
+        <p>Primary tools for creating print and digital visuals.</p>
+      </div>
 
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-top"><span class="skill-icon corel">C</span><span>01</span></div>
+          <h3>CorelDRAW</h3>
+          <p>Vector design, print artwork, logos, layouts and branding.</p>
+          <div class="skill-meter"><span style="width:95%"></span></div>
+          <div class="skill-footer"><span>VECTOR / PRINT</span><b>95%</b></div>
+        </div>
+
+        <div class="skill-card reveal delay-1">
+          <div class="skill-top"><span class="skill-icon ps">Ps</span><span>02</span></div>
+          <h3>Adobe Photoshop</h3>
+          <p>Photo editing, composites, posters, retouching and digital graphics.</p>
+          <div class="skill-meter"><span style="width:92%"></span></div>
+          <div class="skill-footer"><span>PHOTO / DIGITAL</span><b>92%</b></div>
+        </div>
+
+        <div class="skill-card reveal delay-2">
+          <div class="skill-top"><span class="skill-icon canva">Ca</span><span>03</span></div>
+          <h3>Canva</h3>
+          <p>Social content, marketing graphics, presentations and fast concepts.</p>
+          <div class="skill-meter"><span style="width:90%"></span></div>
+          <div class="skill-footer"><span>SOCIAL / CONTENT</span><b>90%</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services-section" id="services">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">SERVICES</span>
+          <h2>Creative help, <em>without noise.</em></h2>
+        </div>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card reveal"><span>01</span><i>✦</i><h3>Logo Design</h3><p>Memorable marks and visual symbols built around the brand.</p></article>
+        <article class="service-card reveal delay-1"><span>02</span><i>◈</i><h3>Poster Design</h3><p>High-impact layouts for campaigns, promotions and events.</p></article>
+        <article class="service-card reveal delay-2"><span>03</span><i>◎</i><h3>Social Media</h3><p>Scroll-stopping creatives that keep the visual identity consistent.</p></article>
+        <article class="service-card reveal delay-3"><span>04</span><i>↗</i><h3>Branding</h3><p>Color, typography and visual direction that make the brand feel complete.</p></article>
+      </div>
+    </section>
+
+    <section class="section process-section">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">PROCESS</span>
+          <h2>From thought <em>to visual.</em></h2>
+        </div>
+      </div>
+
+      <div class="process-track">
+        <div class="process-step reveal"><span>01</span><h3>Discover</h3><p>Understand the brief, audience and goal.</p></div>
+        <div class="process-step reveal delay-1"><span>02</span><h3>Explore</h3><p>Push ideas through references, sketches and directions.</p></div>
+        <div class="process-step reveal delay-2"><span>03</span><h3>Create</h3><p>Build the selected direction with detail and intent.</p></div>
+        <div class="process-step reveal delay-3"><span>04</span><h3>Refine</h3><p>Polish, finalize and prepare delivery-ready assets.</p></div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-card reveal">
+        <div class="contact-main">
+          <span class="eyebrow">LET'S CONNECT</span>
+          <h2>Have an idea?<br><span>Make it visual.</span></h2>
+          <p>
+            Add your email, social handles or contact details here later.
+            The section is ready and intentionally has no phone number.
+          </p>
+          <div class="contact-actions">
+            <a class="btn btn-primary magnetic" href="mailto:hello@example.com">Email Me <span>↗</span></a>
+            <a class="btn btn-ghost magnetic" href="#home">Back to Top <span>↑</span></a>
+          </div>
+        </div>
+        <div class="contact-art">
+          <div class="contact-orbit"></div>
+          <div class="contact-burst">LET'S<br>MAKE<br>MAGIC.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>ASHUTOSH</span>
+    <span>GRAPHIC DESIGNER / VISUAL CREATOR</span>
+    <span>© 2026</span>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
