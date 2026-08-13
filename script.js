@@ -2,7 +2,7 @@ const body = document.body;
 const themeBtn = document.getElementById("themeBtn");
 const menuBtn = document.getElementById("menuBtn");
 const nav = document.getElementById("nav");
-const preloader = document.getElementById("preloader");
+const preloader = document.querySelector(".preloader");
 
 /* PRELOADER */
 window.addEventListener("load", () => {
