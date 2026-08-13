@@ -6,7 +6,9 @@ const preloader = document.getElementById("preloader");
 
 /* PRELOADER */
 window.addEventListener("load", () => {
-  setTimeout(() => preloader.classList.add("hide"), 1300);
+  if (preloader) {
+    setTimeout(() => preloader.classList.add("hide"), 1300);
+  }
 });
 
 /* THEME */
@@ -96,10 +98,12 @@ window.addEventListener("mousemove", e => {
 });
 
 function animateCursor() {
-  ringX += (mouseX - ringX) * 0.14;
-  ringY += (mouseY - ringY) * 0.14;
-  ring.style.left = `${ringX}px`;
-  ring.style.top = `${ringY}px`;
+  if (ring) {
+    ringX += (mouseX - ringX) * 0.14;
+    ringY += (mouseY - ringY) * 0.14;
+    ring.style.left = `${ringX}px`;
+    ring.style.top = `${ringY}px`;
+  }
   requestAnimationFrame(animateCursor);
 }
 animateCursor();
