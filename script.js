@@ -2,13 +2,11 @@ const body = document.body;
 const themeBtn = document.getElementById("themeBtn");
 const menuBtn = document.getElementById("menuBtn");
 const nav = document.getElementById("nav");
-const preloader = document.querySelector(".preloader");
+const preloader = document.querySelector(".preloader-bar");
 
 /* PRELOADER */
 window.addEventListener("load", () => {
-  if (preloader) {
-    setTimeout(() => preloader.classList.add("hide"), 1300);
-  }
+  setTimeout(() => { if (preloader) preloader.classList.add("hide"); }, 1300);
 });
 
 /* THEME */
@@ -93,29 +91,33 @@ let ringY = mouseY;
 window.addEventListener("mousemove", e => {
   mouseX = e.clientX;
   mouseY = e.clientY;
-  dot.style.left = `${mouseX}px`;
-  dot.style.top = `${mouseY}px`;
+  if (dot) {
+    dot.style.left = `${mouseX}px`;
+    dot.style.top = `${mouseY}px`;
+  }
 });
 
 function animateCursor() {
-  if (ring) {
-    ringX += (mouseX - ringX) * 0.14;
-    ringY += (mouseY - ringY) * 0.14;
-    ring.style.left = `${ringX}px`;
-    ring.style.top = `${ringY}px`;
-  }
+  ringX += (mouseX - ringX) * 0.14;
+  ringY += (mouseY - ringY) * 0.14;
+  ring.style.left = `${ringX}px`;
+  ring.style.top = `${ringY}px`;
   requestAnimationFrame(animateCursor);
 }
 animateCursor();
 
 document.querySelectorAll("a,button,.work-card,.skill-card,.service-card").forEach(el => {
   el.addEventListener("mouseenter", () => {
-    ring.style.width = "58px";
-    ring.style.height = "58px";
+    if (ring) {
+      ring.style.width = "58px";
+      ring.style.height = "58px";
+    }
   });
   el.addEventListener("mouseleave", () => {
-    ring.style.width = "38px";
-    ring.style.height = "38px";
+    if (ring) {
+      ring.style.width = "38px";
+      ring.style.height = "38px";
+    }
   });
 });
 
